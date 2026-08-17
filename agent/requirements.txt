@@ -1,3 +1,9 @@
 openai
 python-dotenv
 numpy
+torch
+transformers
+huggingface-hub
+sentencepiece
+langchain
+langchain-openai
