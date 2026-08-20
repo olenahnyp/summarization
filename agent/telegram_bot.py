@@ -4,9 +4,7 @@ Telegram interface for the ChatBrief agent.
 Incoming Telegram messages are sent to the ChatBrief
 backend through the Model Context Protocol (MCP).
 """
-
 import os
-from pathlib import Path
 
 from dotenv import load_dotenv
 
@@ -22,11 +20,9 @@ from telegram.ext import (
 from mcp import Client
 from mcp.types import TextContent
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
-load_dotenv(
-    PROJECT_ROOT / ".env"
-)
+load_dotenv()
+
 
 TELEGRAM_BOT_TOKEN = os.getenv(
     "TELEGRAM_BOT_TOKEN"
@@ -34,9 +30,8 @@ TELEGRAM_BOT_TOKEN = os.getenv(
 
 MCP_SERVER_URL = os.getenv(
     "MCP_SERVER_URL",
-    "http://127.0.0.1:8000/mcp",
+    "http://mcp-server:8000/mcp",
 )
-
 
 if not TELEGRAM_BOT_TOKEN:
     raise ValueError(
