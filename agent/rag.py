@@ -20,8 +20,10 @@ if not os.getenv("OPENAI_API_KEY"):
 
 client = OpenAI()
 
-DATA_PATH = Path("agent/data/student_info.txt")
-INDEX_PATH = Path("agent/data/student_info_index.json")
+BASE_DIR = Path(__file__).resolve().parent
+
+DATA_PATH = BASE_DIR / "data" / "student_info.txt"
+INDEX_PATH = BASE_DIR / "data" / "student_info_index.json"
 
 EMBEDDING_MODEL = "text-embedding-3-small"
 ANSWER_MODEL = "gpt-4.1-mini"

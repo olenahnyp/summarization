@@ -2,8 +2,10 @@ openai
 python-dotenv
 numpy
 torch
-transformers
+transformers==5.15.0
 huggingface-hub
 sentencepiece
 langchain
 langchain-openai
+mcp[cli]>=2,<3
+python-telegram-bot>=22,<23
